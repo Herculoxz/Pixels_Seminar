@@ -32,7 +32,7 @@ SOFTWARE.
 using namespace cv;
 using namespace std;
 
-int main(int argc, char **argv)
+int main(int argc, char **argv)  // it takes command line arguments of program name and the image path.
 {
 	if ( argc != 2 )	
     {
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
         return -1;
     }
 
-	// Reading the Image
+	// Reading the Image   ( argv[1] is used as the path to image that the program will read and process )
 	Mat source_image = imread(argv[1], IMREAD_GRAYSCALE);
 	
 	// Check if the image is created successfully or not
@@ -57,7 +57,7 @@ int main(int argc, char **argv)
 	int kernel_size = 3;
 	output_image = erosion(source_image, output_image, kernel_size);
 
-	// Displaying both source and output image
+	// Displaying both source and output image in a new window.
 	namedWindow("source", WINDOW_NORMAL);
 	imshow("source", source_image);
 
